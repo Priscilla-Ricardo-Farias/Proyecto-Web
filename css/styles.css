@@ -1,0 +1,335 @@
+/* ============================================
+   estilos.css — redesign fachero ✦
+   ============================================ */
+
+@import url('https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:wght@300;400;500;600&display=swap');
+
+/* ── Variables ──────────────────────────────── */
+:root {
+  --bg:       #0d0f14;
+  --surface:  #161a24;
+  --border:   rgba(255 255 255 / .08);
+  --accent:   #4f8cff;
+  --accent-2: #a78bfa;
+  --text:     #e8eaf0;
+  --muted:    #6b7280;
+  --radius:   14px;
+  --nav-h:    64px;
+  --transition: .22s cubic-bezier(.4,0,.2,1);
+}
+
+/* ── Reset / base ───────────────────────────── */
+*, *::before, *::after { box-sizing: border-box; margin: 0; }
+
+body {
+  font-family: 'DM Sans', sans-serif;
+  font-weight: 400;
+  background: var(--bg);
+  color: var(--text);
+  min-height: 100vh;
+  line-height: 1.6;
+  /* subtle grain */
+  background-image:
+    radial-gradient(ellipse 80% 60% at 70% -10%, rgba(79,140,255,.12) 0%, transparent 60%),
+    radial-gradient(ellipse 60% 50% at -10% 80%, rgba(167,139,250,.10) 0%, transparent 55%),
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.75' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='200' height='200' filter='url(%23n)' opacity='.03'/%3E%3C/svg%3E");
+}
+
+
+
+/* ── Navbar ─────────────────────────────────── */
+nav {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  height: var(--nav-h);
+  display: flex;
+  align-items: center;
+  padding: 0 32px;
+  gap: 8px;
+  background: rgba(13 15 20 / .75);
+  backdrop-filter: blur(18px) saturate(1.4);
+  -webkit-backdrop-filter: blur(18px) saturate(1.4);
+  border-bottom: 1px solid var(--border);
+}
+
+nav a {
+  color: var(--muted);
+  text-decoration: none;
+  font-size: .875rem;
+  font-weight: 500;
+  letter-spacing: .02em;
+  padding: 6px 14px;
+  border-radius: 8px;
+  transition: color var(--transition), background var(--transition);
+}
+
+nav a:hover {
+  color: var(--text);
+  background: rgba(255 255 255 / .07);
+  text-decoration: none;
+}
+
+nav a.active {
+  color: var(--accent);
+  background: rgba(79 140 255 / .12);
+}
+
+/* ── Títulos ─────────────────────────────────── */
+h1 {
+  font-family: 'DM Serif Display', serif;
+  font-size: clamp(2rem, 5vw, 3.5rem);
+  font-weight: 400;
+  line-height: 1.1;
+  letter-spacing: -.02em;
+
+  /* degradado azul → violeta */
+  background: linear-gradient(135deg, #ffffff 0%, var(--accent) 50%, var(--accent-2) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+h2, h3 {
+  font-family: 'DM Serif Display', serif;
+  font-weight: 400;
+  letter-spacing: -.01em;
+}
+
+*{ box-sizing: border-box; margin: 0; padding: 0; }
+
+    .page-content {
+      flex: 1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #aaa;
+      font-size: 13px;
+      letter-spacing: 0.05em;
+      padding: 40px;
+    }
+ 
+    footer {
+      background: #1a1714;
+      color: #c9c0b0;
+      padding: 48px 60px 32px;
+    }
+ 
+    .footer-top {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      gap: 40px;
+      padding-bottom: 36px;
+      border-bottom: 1px solid #2e2b27;
+      flex-wrap: wrap;
+    }
+ 
+    .footer-brand h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: 22px;
+      font-weight: 600;
+      color: #f0ece4;
+      margin-bottom: 8px;
+    }
+ 
+    .footer-brand p {
+      font-size: 13px;
+      color: #7a7268;
+      font-weight: 300;
+      max-width: 220px;
+      line-height: 1.6;
+    }
+ 
+    .footer-links {
+      display: flex;
+      gap: 60px;
+      flex-wrap: wrap;
+    }
+ 
+    .footer-col h4 {
+      font-size: 11px;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: #6b6458;
+      margin-bottom: 16px;
+      font-weight: 400;
+    }
+ 
+    .footer-col ul {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+ 
+    .footer-col ul li a {
+      color: #9b9186;
+      text-decoration: none;
+      font-size: 13.5px;
+      font-weight: 300;
+      transition: color 0.2s ease;
+    }
+ 
+    .footer-col ul li a:hover { color: #e8e0d2; }
+ 
+    .footer-bottom {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding-top: 28px;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+ 
+    .footer-bottom p {
+      font-size: 12px;
+      color: #4e4a44;
+      font-weight: 300;
+      letter-spacing: 0.02em;
+    }
+ 
+    .footer-socials { display: flex; gap: 18px; }
+ 
+    .footer-socials a {
+      color: #4e4a44;
+      text-decoration: none;
+      font-size: 12px;
+      letter-spacing: 0.05em;
+      transition: color 0.2s ease;
+    }
+ 
+    .footer-socials a:hover { color: #c9c0b0; }
+
+/* ── Formulario ──────────────────────────────── */
+form {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 36px 32px;
+  max-width: 420px;
+  margin: 56px auto;
+  box-shadow:
+    0 0 0 1px rgba(255 255 255 / .04) inset,
+    0 32px 64px rgba(0 0 0 / .45),
+    0  4px 16px rgba(0 0 0 / .25);
+
+  /* aparece suavito */
+  animation: slideUp .5s cubic-bezier(.16,1,.3,1) both;
+}
+
+@keyframes slideUp {
+  from { opacity: 0; transform: translateY(20px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+form label {
+  display: block;
+  font-size: .8125rem;
+  font-weight: 500;
+  letter-spacing: .04em;
+  text-transform: uppercase;
+  color: var(--muted);
+  margin-bottom: 16px;
+}
+
+form input[type="text"],
+form input[type="password"] {
+  display: block;
+  width: 100%;
+  padding: 11px 14px;
+  margin-top: 6px;
+  background: rgba(255 255 255 / .04);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  color: var(--text);
+  font-family: inherit;
+  font-size: .9375rem;
+  outline: none;
+  transition: border-color var(--transition), box-shadow var(--transition);
+}
+
+form input[type="text"]::placeholder,
+form input[type="password"]::placeholder { color: var(--muted); }
+
+form input[type="text"]:focus,
+form input[type="password"]:focus {
+  border-color: var(--accent);
+  box-shadow: 0 0 0 3px rgba(79 140 255 / .20);
+  background: rgba(79 140 255 / .04);
+}
+
+form button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  width: 100%;
+  margin-top: 8px;
+  padding: 13px 24px;
+  border: none;
+  border-radius: 10px;
+  font-family: inherit;
+  font-size: .9375rem;
+  font-weight: 600;
+  letter-spacing: .01em;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+
+  /* degradado animado */
+  background: linear-gradient(135deg, var(--accent) 0%, var(--accent-2) 100%);
+  color: #fff;
+  box-shadow: 0 4px 20px rgba(79 140 255 / .35);
+  transition: transform var(--transition), box-shadow var(--transition), filter var(--transition);
+}
+
+form button::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, rgba(255 255 255 / .18) 0%, transparent 60%);
+  pointer-events: none;
+}
+
+form button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 28px rgba(79 140 255 / .50);
+  filter: brightness(1.08);
+}
+
+form button:active {
+  transform: translateY(0);
+  box-shadow: 0 2px 10px rgba(79 140 255 / .30);
+}
+
+nav {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.dropdown-menu {
+  display: none;
+  position: absolute;
+  top: 100%;        /* <-- cae justo abajo del botón */
+  left: 0;
+  background: white;
+  border: 1px solid #ccc;
+  min-width: 150px;
+  z-index: 100;
+}
+
+.dropdown-menu a {
+  display: block;
+  padding: 8px 16px;
+}
+
+.dropdown:hover .dropdown-menu {
+  display: block;
+}
