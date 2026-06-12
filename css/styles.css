@@ -1,10 +1,8 @@
-/* ============================================
-   estilos.css — redesign fachero ✦
-   ============================================ */
-
 @import url('https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:wght@300;400;500;600&display=swap');
 
 /* ── Variables ──────────────────────────────── */
+.navbar { background: var(--accent); }   /* el navbar toma el color de la sección */
+
 :root {
   --bg:       #0d0f14;
   --surface:  #161a24;
@@ -24,7 +22,6 @@
 body {
   font-family: 'DM Sans', sans-serif;
   font-weight: 400;
-  background: var(--bg);
   color: var(--text);
   min-height: 100vh;
   line-height: 1.6;
@@ -33,7 +30,7 @@ body {
     radial-gradient(ellipse 80% 60% at 70% -10%, rgba(79,140,255,.12) 0%, transparent 60%),
     radial-gradient(ellipse 60% 50% at -10% 80%, rgba(167,139,250,.10) 0%, transparent 55%),
     url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.75' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='200' height='200' filter='url(%23n)' opacity='.03'/%3E%3C/svg%3E");
-}
+  }
 
 
 
@@ -332,4 +329,31 @@ nav {
 
 .dropdown:hover .dropdown-menu {
   display: block;
+}
+/* ── Colores por sección ───────────────────── */
+
+body.sec-inicio {
+  --accent: #4a90d9;
+}
+
+body.sec-ayuda {
+  --accent: #e67e22;
+}
+
+body.sec-contacto {
+  --accent: #27ae60;
+}
+
+body.sec-nosotros {
+  --accent: #8e44ad;
+}
+
+/* Navbar dinámico */
+.navbar {
+  background: var(--accent);
+}
+
+/* Transición suave */
+body {
+  transition: background .3s, color .3s;
 }
