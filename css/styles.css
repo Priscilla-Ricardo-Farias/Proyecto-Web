@@ -357,3 +357,20 @@ body.sec-nosotros {
 body {
   transition: background .3s, color .3s;
 }
+.cartelera {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.pelicula {
+    width: 200px;
+    text-align: center;
+}
+
+.pelicula img {
+    width: 150px;
+    height: 220px;
+    object-fit: cover;
+}

@@ -22,6 +22,7 @@
     </div>
 
     <a href="logout.php">Salir</a>
+    <a href="cartelera.php">Cartelera</a>
 </nav>
 </body>
 </html>
