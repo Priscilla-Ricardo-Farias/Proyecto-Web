@@ -14,51 +14,40 @@ switch ($seccion) {
         $titulo = 'Ayuda';
         $contenido = 'Esto es un sistema de ejemplo. Logueate con admin / 1234.';
         $imagen = 'https://picsum.photos/seed/ayuda/600/300';
-        $clase = 'sec-ayuda';
         break;
 
     case 'contacto':
         $titulo = 'Contacto';
         $contenido = 'Escribinos a contacto@ejemplo.com';
         $imagen = 'https://picsum.photos/seed/contacto/600/300';
-        $clase = 'sec-contacto';
         break;
 
     case 'nosotros':
         $titulo = 'Nosotros';
         $contenido = 'Somos un equipo de 7° año aprendiendo PHP.';
         $imagen = 'https://picsum.photos/seed/nosotros/600/300';
-        $clase = 'sec-nosotros';
         break;
 
     default:
         $titulo = 'Inicio';
         $contenido = 'Bienvenido a nuestro sitio web.';
         $imagen = 'https://picsum.photos/seed/inicio/600/300';
-        $clase = 'sec-inicio';
         break;
 }
+
+include 'includes/header.php';
 ?>
 
-<!DOCTYPE html>
-<html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title><?= $titulo ?></title>
-    <link rel="stylesheet" href="css/styles.css">
-</head>
-<body class="<?= $clase ?>">
+<main style="text-align:center; padding:40px;">
 
-<?php include 'includes/header.php'; ?>
+    <h1><?= $titulo ?></h1>
 
-<h1><?= $titulo ?></h1>
+    <img src="<?= $imagen ?>" style="max-width:500px; border-radius:15px;">
 
-<img src="<?= $imagen ?>" alt="<?= $titulo ?>">
+    <p style="margin-top:20px; color:#94a3b8;">
+        <?= $contenido ?>
+    </p>
 
-<p><?= $contenido ?></p>
+</main>
 
 <?php include 'includes/footer.php'; ?>
-
-</body>
-</html>

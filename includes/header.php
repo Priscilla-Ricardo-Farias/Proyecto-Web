@@ -1,28 +1,30 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mi sistema</title>
+    <title>CineSystem</title>
     <link rel="stylesheet" href="css/styles.css">
 </head>
+
 <body>
 
 <nav class="navbar">
-    <a href="index.php">Inicio</a>
+
+    <a href="/workspace/home.php">Inicio</a>
+
+    <a href="/workspace/cartelera.php">Cartelera</a>
 
     <div class="dropdown">
-        <a href="#">Ayuda ▾</a>
+        <a href="#">Info ▾</a>
 
         <div class="dropdown-menu">
-            <a href="info.php?seccion=ayuda">Ayuda</a>
-            <a href="info.php?seccion=contacto">Contacto</a>
-            <a href="info.php?seccion=nosotros">Nosotros</a>
+            <a href="/workspace/info.php?seccion=ayuda">Ayuda</a>
+            <a href="/workspace/info.php?seccion=contacto">Contacto</a>
+            <a href="/workspace/info.php?seccion=nosotros">Nosotros</a>
         </div>
     </div>
 
-    <a href="logout.php">Salir</a>
-    <a href="cartelera.php">Cartelera</a>
+    <a href="/workspace/logout.php">Salir</a>
+
 </nav>
-</body>
-</html>

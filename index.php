@@ -1,26 +1,85 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
+
 <head>
+
     <meta charset="UTF-8">
+
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="css/styles.css">
+
+    <title>CineSystem</title>
+
+<link rel="stylesheet" href="css/styles.css">
+
 </head>
+
 <body>
-    <?php include 'includes/header.php'; ?>
 
-<h1>Iniciar sesión</h1>
+<?php include 'includes/header.php'; ?>
 
-<form action="procesar-login.php" method="POST">
-  <label>Usuario:
-    <input type="text" name="usuario">
-  </label>
-  <label>Contraseña:
-    <input type="password" name="clave">
-  </label>
-  <button type="submit">Entrar</button>
-</form>
+<main class="login-container">
+
+    <div class="login-card">
+
+        <div class="login-icon">
+            🎬
+        </div>
+
+        <h1>Bienvenido</h1>
+
+        <?php if (isset($_GET['error'])): ?>
+    <p style="
+        text-align:center;
+        margin-bottom:20px;
+    ">
+        Usuario o contraseña incorrectos
+    </p>
+<?php endif; ?>
+
+        <p class="login-subtitle">
+            Inicia sesión para acceder al sistema.
+        </p>
+
+        <form action="procesar-login.php" method="POST">
+
+            <label>
+
+                Usuario
+
+                <input
+                    type="text"
+                    name="usuario"
+                    placeholder="Ingresa tu usuario"
+                    required>
+
+            </label>
+
+            <label>
+
+                Contraseña
+
+                <input
+                    type="password"
+                    name="clave"
+                    placeholder="Ingresa tu contraseña"
+                    required>
+
+            </label>
+
+            <button type="submit">
+
+                Iniciar sesión
+
+            </button>
+
+        </form>
+
+    </div>
+
+</main>
 
 <?php include 'includes/footer.php'; ?>
+
 </body>
+
 </html>
