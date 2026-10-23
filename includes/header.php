@@ -11,19 +11,15 @@
 
 <nav class="navbar">
 
+    <a href="/workspace/home.php" class="nav-brand"><span class="brand-icono">🎬</span> CINE<span>SYSTEM</span></a>
+
     <a href="/workspace/home.php">Inicio</a>
 
     <a href="/workspace/cartelera.php">Cartelera</a>
 
-    <div class="dropdown">
-        <a href="#">Info ▾</a>
+    <a href="/workspace/eventos.php">Eventos</a>
 
-        <div class="dropdown-menu">
-            <a href="/workspace/info.php?seccion=ayuda">Ayuda</a>
-            <a href="/workspace/info.php?seccion=contacto">Contacto</a>
-            <a href="/workspace/info.php?seccion=nosotros">Nosotros</a>
-        </div>
-    </div>
+    <a href="/workspace/info.php">Mis entradas</a>
 
     <a href="/workspace/logout.php">Salir</a>
 

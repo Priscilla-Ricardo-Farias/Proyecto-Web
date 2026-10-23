@@ -1,21 +1,11 @@
-<!DOCTYPE html>
-<html lang="es">
+<?php
+session_start();
+require 'includes/auth.php';
 
-<head>
+redirigirSiYaLogueado();
 
-    <meta charset="UTF-8">
-
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <title>CineSystem</title>
-
-<link rel="stylesheet" href="css/styles.css">
-
-</head>
-
-<body>
-
-<?php include 'includes/header.php'; ?>
+include 'includes/header.php';
+?>
 
 <main class="login-container">
 
@@ -28,10 +18,7 @@
         <h1>Bienvenido</h1>
 
         <?php if (isset($_GET['error'])): ?>
-    <p style="
-        text-align:center;
-        margin-bottom:20px;
-    ">
+    <p class="login-error">
         Usuario o contraseña incorrectos
     </p>
 <?php endif; ?>
@@ -40,16 +27,16 @@
             Inicia sesión para acceder al sistema.
         </p>
 
-        <form action="procesar-login.php" method="POST">
+        <form action="procesar/procesar-login.php" method="POST">
 
             <label>
 
-                Usuario
+                Email
 
                 <input
                     type="text"
-                    name="usuario"
-                    placeholder="Ingresa tu usuario"
+                    name="email"
+                    placeholder="Ingresa tu email"
                     required>
 
             </label>
@@ -60,7 +47,7 @@
 
                 <input
                     type="password"
-                    name="clave"
+                    name="password"
                     placeholder="Ingresa tu contraseña"
                     required>
 
@@ -74,12 +61,12 @@
 
         </form>
 
+        <p class="login-subtitle" style="margin-top:25px;">
+            ¿No tenés cuenta? <a href="registro.php">Registrate</a>
+        </p>
+
     </div>
 
 </main>
 
 <?php include 'includes/footer.php'; ?>
-
-</body>
-
-</html>

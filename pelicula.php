@@ -1,10 +1,16 @@
 <?php
+session_start();
+require 'includes/auth.php';
+
+requiereLogin();
+bloquearAdmin();
+
 $peliculas = require 'datos.php';
 
-$id = $_GET['id'] ?? 'matrix';
+$id = $_GET['id'] ?? null;
 $peli = $peliculas[$id] ?? null;
 
-if ($peli === null) {
+if ($peli === null || empty($peli['activa'])) {
     echo "Esa película no existe.";
     exit;
 }
@@ -30,8 +36,6 @@ include 'includes/header.php';
 
             <div class="detalle-meta">
 
-            <div class="detalle-meta">
-
     <span><?= $peli['anio'] ?></span>
 
     <span>•</span>
@@ -52,14 +56,6 @@ include 'includes/header.php';
 
 </p>
 
-                <span><?= htmlspecialchars($peli['anio']) ?></span>
-
-                <span>•</span>
-
-                <span><?= htmlspecialchars($peli['genero']) ?></span>
-
-            </div>
-
             <?php if (!empty($peli['descripcion'])): ?>
 
                 <p class="sinopsis">
@@ -78,11 +74,21 @@ include 'includes/header.php';
 
             <?php endif; ?>
 
-            <a href="cartelera.php" class="btn-volver">
+            <div class="detalle-acciones">
 
-                ← Volver a la cartelera
+                <a href="seleccionar-funcion.php?id=<?= urlencode($id) ?>" class="btn-comprar">
 
-            </a>
+                    🎟️ Comprar entrada
+
+                </a>
+
+                <a href="cartelera.php" class="btn-volver">
+
+                    ← Volver a la cartelera
+
+                </a>
+
+            </div>
 
         </div>
 
